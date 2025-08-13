@@ -2,6 +2,23 @@
 
 A localhost web application for transcribing audio and video files using AssemblyAI's powerful speech-to-text API.
 
+## 🚀 Quick Start
+
+**Just run one command:**
+
+```bash
+# macOS/Linux
+./setup.sh
+
+# Windows  
+setup.bat
+
+# If you already have Node.js
+npm install && npm start
+```
+
+Then open: **http://localhost:3000**
+
 ## Features
 
 - 🎵 **Multi-format Support**: Supports audio files (MP3, WAV, M4A, AAC, FLAC, OGG) and video files (MP4, MOV, AVI, MKV, FLV, WMV, WebM)
@@ -13,13 +30,39 @@ A localhost web application for transcribing audio and video files using Assembl
 
 ## Installation
 
+### 🚀 **One-Command Setup (Recommended)**
+
+**For macOS/Linux:**
+```bash
+./setup.sh
+```
+
+**For Windows:**
+```batch
+setup.bat
+```
+
+**Alternative one-liner (if you have Node.js):**
+```bash
+npm install && npm start
+```
+
+These scripts will automatically:
+- Check if Node.js is installed
+- Install Node.js if needed (macOS/Linux only - Windows users will get instructions)
+- Install all dependencies
+- Start the application
+
+### 📋 **Manual Installation**
+
 1. **Clone or download this project**
-2. **Install dependencies**:
+2. **Install Node.js** from https://nodejs.org/ (if not already installed)
+3. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. **Start the server**:
+4. **Start the server**:
    ```bash
    npm start
    ```
@@ -29,7 +72,7 @@ A localhost web application for transcribing audio and video files using Assembl
    npm run dev
    ```
 
-4. **Open your browser** and go to: `http://localhost:3000`
+5. **Open your browser** and go to: `http://localhost:3000`
 
 ## Usage
 
