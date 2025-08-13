@@ -19,6 +19,61 @@ npm install && npm start
 
 Then open: **http://localhost:3000**
 
+## 🍎 Mac Setup Instructions
+
+### **Step 1: Download and Extract**
+1. Download the LocalAudioTranscriber folder to your Mac (Desktop, Downloads, etc.)
+2. Extract it if it's in a zip file
+
+### **Step 2: Open Terminal**
+1. Press `Cmd + Space` to open Spotlight
+2. Type "Terminal" and press Enter
+3. Or go to Applications → Utilities → Terminal
+
+### **Step 3: Navigate to the Project**
+```bash
+cd ~/Desktop/LocalAudioTranscriber
+```
+*(Change the path if you put it somewhere else, like Downloads)*
+
+### **Step 4: Run the Setup Script**
+```bash
+./setup.sh
+```
+
+### **What You'll See:**
+```bash
+🚀 Local Audio Transcriber Setup Script
+=======================================
+✅ Node.js is already installed: v18.17.0
+✅ npm is available: 9.6.7
+📦 Installing project dependencies...
+✅ Dependencies installed successfully!
+🎬 Starting Local Audio Transcriber...
+📋 The application will be available at: http://localhost:3000
+Ready to transcribe audio and video files!
+```
+
+### **Step 5: Open Your Browser**
+1. Open Safari, Chrome, or any browser
+2. Go to: **http://localhost:3000**
+3. Start uploading audio/video files! 🎵
+
+### **💡 If You Don't Have Node.js:**
+The script will automatically install it using Homebrew:
+- If you don't have Homebrew, it will install that first
+- Then it will install Node.js
+- Then it will set up everything else
+
+### **🛑 To Stop the Server:**
+Press `Ctrl + C` in the Terminal window
+
+### **🔄 To Start Again Later:**
+Just run:
+```bash
+npm start
+```
+
 ## Features
 
 - 🎵 **Multi-format Support**: Supports audio files (MP3, WAV, M4A, AAC, FLAC, OGG) and video files (MP4, MOV, AVI, MKV, FLV, WMV, WebM)
