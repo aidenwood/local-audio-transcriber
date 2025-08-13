@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.upload-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.upload-area {
+    border: 3px dashed #667eea;
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-area:hover {
+    border-color: #764ba2;
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.upload-area.dragover {
+    border-color: #764ba2;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.upload-area i {
+    font-size: 3rem;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.upload-area h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.upload-area p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+#fileInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-info {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.file-item:last-child {
+    margin-bottom: 0;
+}
+
+.file-item i {
+    margin-right: 10px;
+    color: #667eea;
+}
+
+#uploadBtn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#uploadBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.jobs-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.jobs-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.jobs-list {
+    display: grid;
+    gap: 15px;
+}
+
+.no-jobs {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.no-jobs i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.job-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.job-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.job-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.job-title {
+    font-weight: 600;
+    color: #333;
+    flex: 1;
+}
+
+.job-status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-processing {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-uploading {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-transcribing {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.status-completed {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.3s ease;
+}
+
+.job-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.transcript-content {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    line-height: 1.6;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e9ecef;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .upload-area {
+        padding: 30px 15px;
+    }
+    
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .job-actions {
+        flex-wrap: wrap;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+        width: 95%;
+    }
+}
